@@ -12,7 +12,7 @@ tokens = {'discord': config['DEFAULT']['DiscordToken'],
 
 riotapi.set_api_key(tokens['riot'])
 
-command_prefix = '!'
+command_prefix = config['DEFAULT']['CommandPrefix']
 description = '''Idk this is memes or some shit'''
 
 bot = commands.Bot(command_prefix=command_prefix, description=description)
