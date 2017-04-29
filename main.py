@@ -2,10 +2,13 @@ import discord
 from discord.ext import commands
 from cassiopeia import riotapi
 from cassiopeia.core import currentgameapi
+import configparser
 
+config = configparser.ConfigParser()
+config.read(config.ini)
 
-tokens = {'discord': 'Mjk0ODI5ODU5ODExODg1MDU2.C-Vc3w.ElnD7VfNOWnGwY3P2KJZTJ9FOTw',
-          'riot': 'd52a385c-c5a6-4059-b64e-de8914cd4ae7'}
+tokens = {'discord': config['DEFAULT']['DiscordToken'],
+          'riot': config['DEFAULT']['RiotToken']}
 
 riotapi.set_api_key(tokens['riot'])
 
